@@ -6,4 +6,7 @@ class AppStrings {
   static String succsessTextOne = "Succsess :)";
   static String failedTextTwo = "Attempts : ";
   static String succsessTextTwo = "Score : ";
+    static String resetMessege=
+      "Sorry! timeout and one attempt is considered for failure as penalty";
+  static String timerStatic = "0:0";
 }
