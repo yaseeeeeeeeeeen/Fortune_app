@@ -13,18 +13,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.sizeOf(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Hero(
-              tag: "AppName",
-              child: Text(AppStrings.appName, style: FontStyles.appnameStyle)),
+          title: Text(AppStrings.appName, style: FontStyles.appnameStyle),
           centerTitle: true,
         ),
         body: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               BlocBuilder<FortuneBloc, FortuneState>(
                 builder: (context, state) {
@@ -51,6 +50,7 @@ class HomePage extends StatelessWidget {
                   }
                 },
               ),
+              const SizedBox(height: 20),
               BlocBuilder<FortuneBloc, FortuneState>(
                 buildWhen: (previous, current) =>
                     current is! ResetCountDownClickedState,
@@ -67,8 +67,9 @@ class HomePage extends StatelessWidget {
                   }
                 },
               ),
-              const SizedBox(),
+              SizedBox(height: size.height / 7),
               const CountDown(),
+              SizedBox(height: size.height / 7),
               const SizedBox(),
               BlocListener<FortuneBloc, FortuneState>(
                 listener: (context, state) {},

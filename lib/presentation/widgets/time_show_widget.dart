@@ -13,6 +13,14 @@ class TimeShowWiget extends StatelessWidget {
     Size size = MediaQuery.sizeOf(context);
     return Container(
       decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
+            ),
+          ],
           border: Border.all(
               width: 2,
               color: widget1
@@ -33,7 +41,7 @@ class TimeShowWiget extends StatelessWidget {
           Divider(
             color: AppColors.dividerColor,
           ),
-          Text(number.toString())
+          Text(number.toString(), style: FontStyles.wiget1and2Style)
         ],
       ),
     );

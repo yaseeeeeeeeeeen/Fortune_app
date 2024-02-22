@@ -55,12 +55,16 @@ class _CountDownState extends State<CountDown> {
               _resetCountdown(state.isClicked);
             }
           },
-          child: CircularProgressIndicator(
-            backgroundColor: Colors.grey,
-            strokeCap: StrokeCap.round,
-            value: _seconds / 5,
-            color: AppColors.buttonColor,
-            strokeWidth: 3,
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: CircularProgressIndicator(
+              backgroundColor: Colors.grey,
+              strokeCap: StrokeCap.round,
+              value: _seconds / 5,
+              color: AppColors.buttonColor,
+              strokeWidth: 3,
+            ),
           ),
         ),
       ),

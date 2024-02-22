@@ -17,6 +17,15 @@ class ResultWidget extends StatelessWidget {
       height: size.height / 6,
       width: size.width,
       decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.4),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
+            ),
+          ],
+          border: Border.all(strokeAlign: BorderSide.strokeAlignCenter),
           borderRadius: BorderRadius.circular(10),
           color: succsess ? AppColors.succsessColor : AppColors.failedColor),
       child: Column(

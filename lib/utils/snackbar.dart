@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:fortune/utils/textstyles.dart';
 
@@ -11,10 +10,11 @@ class CustomSnackBar {
 
   static SnackBar _buildCustomSnackBar(String message) {
     return SnackBar(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       duration: const Duration(seconds: 2),
       behavior: SnackBarBehavior.floating,
       padding: const EdgeInsets.only(bottom: 5),
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.red.shade600,
       content: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
