@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fortune/presentation/bloc/fortune_bloc/fortune_bloc.dart';
 import 'package:fortune/utils/colors.dart';
 import 'package:fortune/utils/textstyles.dart';
 
