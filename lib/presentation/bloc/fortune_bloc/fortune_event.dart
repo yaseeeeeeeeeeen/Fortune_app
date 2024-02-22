@@ -4,8 +4,6 @@ abstract class FortuneEvent {}
 class FetchDataEvent extends FortuneEvent {}
 
 class ButtonClickedEvent extends FortuneEvent {
-  
-
   ButtonClickedEvent();
 }
 

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fortune/presentation/bloc/fortune_bloc/fortune_bloc.dart';
 import 'package:fortune/utils/colors.dart';
 import 'package:fortune/utils/textstyles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  final void Function()? onPressed;
+  const CustomButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           fixedSize: Size(size.width - 40, 50),
           shape:

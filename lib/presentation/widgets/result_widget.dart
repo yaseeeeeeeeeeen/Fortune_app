@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:fortune/domin/model/data_model.dart';
 import 'package:fortune/utils/colors.dart';
 import 'package:fortune/utils/static_strings.dart';
 import 'package:fortune/utils/textstyles.dart';
 
 class ResultWidget extends StatelessWidget {
   final bool succsess;
-  final int attempt;
-  final int succsessCount;
-  const ResultWidget(
-      {super.key,
-      required this.succsess,
-      required this.attempt,
-      required this.succsessCount});
+  final DataModel? dataModel;
+  const ResultWidget({super.key, this.dataModel, required this.succsess});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +30,10 @@ class ResultWidget extends StatelessWidget {
                   style: FontStyles.resultTextStyle),
           Divider(color: AppColors.dividerColor),
           succsess
-              ? Text("${AppStrings.succsessTextTwo} $succsessCount/$attempt",
+              ? Text(
+                  "${AppStrings.succsessTextTwo} ${dataModel?.successCount}/${dataModel?.attempts}",
                   style: FontStyles.resultTextStyle)
-              : Text("${AppStrings.failedTextTwo} $attempt",
+              : Text("${AppStrings.failedTextTwo} ${dataModel?.attempts ?? 0}",
                   style: FontStyles.resultTextStyle)
         ],
       ),
