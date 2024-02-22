@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fortune/presentation/widgets/button_custom.dart';
 import 'package:fortune/presentation/widgets/count_down.dart';
 import 'package:fortune/presentation/widgets/result_widget.dart';
 import 'package:fortune/presentation/widgets/time_show_widget.dart';
@@ -17,32 +18,27 @@ class HomePage extends StatelessWidget {
           title: Text(AppStrings.appName, style: FontStyles.appnameStyle),
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(15),
+        body: const Padding(
+          padding: EdgeInsets.all(15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TimeShowWiget(widget1: true, number: 10),
                   TimeShowWiget(widget1: false, number: 10)
                 ],
               ),
-              const ResultWidget(
+              ResultWidget(
                 succsess: false,
                 attempt: 10,
                 succsessCount: 10,
               ),
-              // SizedBox(height: size.height / 6),
-              // ResultWidget(
-              //   succsess: true,
-              //   attempt: 5,
-              //   succsessCount: 10,
-              // )
+              SizedBox(),
 
-              const CountDown(),
-              ElevatedButton(onPressed: () {}, child: const Text("Click Here"))
+              CountDown(), SizedBox(),
+              CustomButton()
             ],
           ),
         ),

@@ -5,4 +5,6 @@ class FontStyles {
   static TextStyle wiget1and2Style = const TextStyle(fontSize: 15);
   static TextStyle resultTextStyle =
       const TextStyle(fontSize: 23, color: Colors.white);
+  static TextStyle buttontext =
+      const TextStyle(fontSize: 15, color: Colors.white);
 }

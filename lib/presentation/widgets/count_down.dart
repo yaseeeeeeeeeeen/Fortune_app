@@ -31,8 +31,7 @@ class _CountDownState extends State<CountDown> {
   }
 
   void _resetCountdown(bool buttonClicked) {
-    if (!buttonClicked) {
-          }
+    if (!buttonClicked) {}
     setState(() {
       _seconds = 5;
       buttonClicked = false;
@@ -45,16 +44,16 @@ class _CountDownState extends State<CountDown> {
       Transform.scale(
         scale: 3,
         child: CircularProgressIndicator(
-          backgroundColor: AppColors.succsessColor,
+          backgroundColor: Colors.grey,
           strokeCap: StrokeCap.round,
           value: _seconds / 5,
-          color: AppColors.failedColor,
+          color: AppColors.buttonColor,
           strokeWidth: 3,
         ),
       ),
       Text(
         "${AppStrings.timerStatic}$_seconds",
-        style: const TextStyle(fontSize: 26, color: Colors.white),
+        style: const TextStyle(fontSize: 26, color: Colors.black),
       )
     ]);
   }
